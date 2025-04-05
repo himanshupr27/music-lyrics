@@ -1,34 +1,73 @@
 #nav-icon {
-    width: 2.5vmax;
-  }
-  .nav-bar {
-    background-color: #abacad24;
-    font-weight: 600;
-    padding: 1vmax 6vmax !important;
-  }
-  .nav-items {
-    color: rgb(0, 0, 0) !important;
-  }
-  .nav-items:hover {
-    color: #ffffffc0 !important;
-    text-decoration: underline;
-  }
-  .nav-bar-left {
-    color: #000000;
-    svg:hover {
-      cursor: pointer;
-    }
-    
-    .outer-search-icon{
-      margin-right:1vmax ;
-    }
-  
-  }
-  #user-img{
-      width: 2vmax;
-      height: 2vmax;
-      color: #ffffff;
-    }
-    #user-img:hover{
-      cursor: pointer;
-    }
+  width: 2.5vmax;
+}
+.nav-bar {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+  padding: 0.5vmax 6vmax !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-items {
+  color: #ffffff !important;
+  margin:0vmax  1vmax;
+  font-size: 1.5vmax;
+  font-family: "Winky Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.1vmax;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-items:hover {
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.3);
+  text-decoration: none;
+}
+.active{
+
+  transform: scale(1.5);
+}
+
+.nav-bar-left {
+#user-img {
+  width: 2.5vmax;
+  height: 2.5vmax;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+  margin-right: 0.8vmax;
+}
+.nav-link{
+  color: white;
+  font-size: 1.5vmax;
+  font-family: "Winky Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.1vmax;
+}
+.login:hover #user-img {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: rgb(26, 26, 101);
+}
+.login:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: rgb(26, 26, 101);
+}
+}
+
+
+#logo {
+  width: 90px;
+  padding: 0;
+  margin: 0;
+  margin-right: 2vmax;
+}

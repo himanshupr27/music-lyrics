@@ -18,14 +18,16 @@ const NavbarTop = () => {
   return (
     <>
    <Navbar dark expand="md" className="nav-bar">
-        {/* <NavbarBrand href="/"><img id="nav-icon" src="/Images/Nabvar/jio-icon.png"/></NavbarBrand> */}
+        <NavbarBrand href="/">
+        <img src='/Images/trans.png' id='logo'/>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} >
           <FaUserCircle className="outer-search-icon" id="user-img"/> 
           </NavbarToggler>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem >
-              <NavLink href="/" className="nav-items">Home</NavLink>
+              <NavLink href="/" className="nav-items active">Home</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/blogs" className="nav-items">Blogs</NavLink>
@@ -41,7 +43,7 @@ const NavbarTop = () => {
           {/* <FaHeart className="outer-search-icon"/>
           <MdShowChart className="outer-search-icon"/> */}
 
-          <NavLink href="bussiness/user/login">
+          <NavLink href="/user/login" className='login'>
           <FaUserCircle className="outer-search-icon" id="user-img"/>
           Login
           </NavLink>

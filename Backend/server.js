@@ -1,20 +1,21 @@
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
-import connectDB from "./db.js";
-import env from "dotenv";
-env.config();
-const app=express();
-// app.use(cors(CorsOption));
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const authRoutes = require('./routes/authRoutes');
+const lyricsRoutes = require('./routes/lyricsRoutes');
+const blogRoutes = require('./routes/blogRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
-app.use(bodyParser.json());
+dotenv.config();
+const app = express();
 
-const PORT = process.env.PORT || 3000;
+app.use(cors());
+app.use(express.json());
 
-connectDB().then(()=>{
-    app.listen(PORT,()=>{
-        console.log(`App is running at ${PORT}`)
-    });
-});
+app.use('/api/auth', authRoutes);
+app.use('/api/lyrics', lyricsRoutes);
+app.use('/api/blogs', blogRoutes);
+app.use('/api/contact', contactRoutes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

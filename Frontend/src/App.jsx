@@ -12,7 +12,7 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <><NavbarTop/><Home/><Footer/></>,
+      element: <><Home/><Footer/></>,
     },
     {
       path: "/contact",

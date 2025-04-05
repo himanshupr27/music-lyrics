@@ -1,0 +1,116 @@
+.search-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2vmax;
+    padding: 2vmax;
+
+    width: 100%;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 2vmax;
+    font-size: 1.2vmax;
+    color: white;
+  }
+  
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 2.5vmax;
+    user-select: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Hide default radio */
+  .radio-group input[type='radio'] {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  /* Custom Radio Circle */
+  .radio-group label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.4vmax;
+    width: 1.4vmax;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  /* Inner Circle Animation when checked */
+  .radio-group input[type='radio']:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 0.35vmax;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+    height: 0.7vmax;
+    width: 0.7vmax;
+    background-color: #7a5af8;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    animation: pulse 0.4s ease;
+  }
+  
+  /* Initial state (scaled down for smooth animation) */
+  .radio-group label::after {
+    transform: scale(0);
+  }
+  
+  /* Cool Pulse Effect */
+  @keyframes pulse {
+    0% {
+      transform: scale(0.4);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .search-page input {
+    padding: 1vmax;
+    width: 40%;
+    font-size: 1.2vmax;
+    border: 2px solid #ddd;
+    border-radius: 0.6vmax;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .search-page input:focus {
+    border-color: #7a5af8;
+    box-shadow: 0 0 0.5vmax rgba(122, 90, 248, 0.3);
+  }
+  .search-page button {
+    padding: 1vmax 2vmax;
+    font-size: 1.1vmax;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  
+  .search-page button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff89b4, #6258ff);
+  }
+  
