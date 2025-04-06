@@ -1,0 +1,169 @@
+
+.auth-container {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin-top: -80px;
+    padding-top: 10vmax; 
+    padding-bottom: 4vmax;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  
+  .auth-container::before,
+  .auth-container::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: waveMove 8s linear infinite;
+    opacity: 0.4;
+  }
+  
+  .auth-container::before {
+    background-image: radial-gradient(circle, #ff6ec4 10%, transparent 70%);
+    animation-delay: 0s;
+  }
+  
+  .auth-container::after {
+    background-image: radial-gradient(circle, #7873f5 10%, transparent 70%);
+    animation-delay: 4s;
+  }
+  
+  /* Auth card on top */
+  .auth-card {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Wave animation */
+  @keyframes waveMove {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  /* Override Toastify container z-index */
+.Toastify__toast-container {
+    z-index: 10 !important;
+  }
+  
+  
+  /* Card */
+  .auth-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 3rem 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    width: 40%;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .auth-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Title */
+  .auth-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  /* Form */
+  .auth-form input {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    transition: 0.3s ease;
+  }
+  
+  .auth-form input::placeholder {
+    color: #ddd;
+  }
+  
+  .auth-form input:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Button */
+  .auth-button {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(255, 65, 108, 0.3);
+    transition: transform 0.2s ease;
+  }
+  
+  .auth-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Switch */
+  .auth-switch {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .auth-switch a {
+    color: #ff9aa2;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes backgroundShift {
+    0% { background-position: left; }
+    100% { background-position: right; }
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  .slide-in {
+    animation: slideIn 1s ease-out forwards;
+  }
+  

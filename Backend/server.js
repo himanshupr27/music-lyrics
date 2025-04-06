@@ -5,6 +5,7 @@ const authRoutes = require('./routes/authRoutes');
 const lyricsRoutes = require('./routes/lyricsRoutes');
 const blogRoutes = require('./routes/blogRoutes');
 const contactRoutes = require('./routes/contactRoutes');
+const artistRoutes = require('./routes/artistRoutes');
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,6 @@ app.use('/api/auth', authRoutes);
 app.use('/api/lyrics', lyricsRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/contact', contactRoutes);
-
+app.use('/api', artistRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

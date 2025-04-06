@@ -7,6 +7,7 @@
   font-weight: 600;
   padding: 0.5vmax 6vmax !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
 }
 
 .nav-items {
